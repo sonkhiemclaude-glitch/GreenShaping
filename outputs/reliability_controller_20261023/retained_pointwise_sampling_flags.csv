@@ -1,0 +1,5 @@
+scenario,N,K,M,epsilon_session,rho_completion,policy,capped,pattern,failures,repetitions,failure_rate,max_observed_total_bytes,ci_lower,ci_upper,mean_total_bytes,worst_mean_model_budget_ratio,completion_bound
+N3_K20_M1_heterogeneous_eps4_rho0.01,3,20,1,4.0,0.01,workflow_uniform,False,late,67,5000,0.0134,31888182,0.0103994982127032,0.0169866829847689,28847848.9422,1.1118115084397235,0.01
+N3_K20_M1_heterogeneous_eps4_rho0.01,3,20,1,4.0,0.01,workflow_allocated,False,late,67,5000,0.0134,34352052,0.0103994982127032,0.0169866829847689,31308825.663000003,0.9873853093769484,0.0099999999999999
+N3_K20_M1_heterogeneous_eps4_rho0.001,3,20,1,4.0,0.001,workflow_uniform,True,late,11,5000,0.0022,1679360,0.0010987276822172,0.00393299034026,1679063.7606000002,0.0472319844999653,0.001
+N3_K20_M1_heterogeneous_eps4_rho0.001,3,20,1,4.0,0.001,workflow_allocated,False,late,12,5000,0.0024,48047763,0.0012407107696028,0.0041885601860453,44479608.358,1.0003656255342452,0.001

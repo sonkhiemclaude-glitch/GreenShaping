@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "greenshaping"
+version = "0.5.0"
+description = "Reference implementation of Green Shaping: energy-accounted metadata protection for LLM-agent-orchestrated federated analytics"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "No software reuse licence selected; see LICENSING.md"}
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.0",
+  "scipy>=1.11",
+  "scikit-learn>=1.3",
+  "matplotlib>=3.8",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+cnn = ["torch>=2.2"]
+agent = ["langgraph>=1.0,<2"]
+remote = ["paramiko>=3", "python-dotenv>=1"]
+dev = ["pytest>=8", "ruff>=0.5", "mypy>=1.10", "types-PyYAML"]
+
+[project.scripts]
+greenshaping = "greenshaping.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+# code/ is the superseded prototype and check_compliance.py a manuscript tool (same folder on the device)
+extend-exclude = ["outputs", "code", "check_compliance.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E731"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+warn_unused_ignores = false
+check_untyped_defs = true

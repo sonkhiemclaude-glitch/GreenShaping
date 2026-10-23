@@ -1,0 +1,58 @@
+{
+  "frozen_before_scores": true,
+  "date": "2026-10-23",
+  "scope": "synthetic fixed-arrival deployment, all sites active; not a physical network or measured energy",
+  "N": [
+    3,
+    10,
+    20
+  ],
+  "K": [
+    10,
+    20
+  ],
+  "M": [
+    1,
+    3
+  ],
+  "heterogeneity": [
+    "uniform",
+    "heterogeneous"
+  ],
+  "epsilon_session": [
+    1.0,
+    4.0
+  ],
+  "completion_rho": [
+    0.01,
+    0.001
+  ],
+  "time_interval_s": 0.5,
+  "input_contract": "each direction total <= V, at most M occupied ticks; all inputs arrive before final release; Delta=2V",
+  "privacy_accounting": "epsilon per direction = epsilon_session/(2N); fixed across policies within a scenario",
+  "public_policy": "all contracts, caps, allocations and budgets fixed before private arrivals; violation/abort privacy outside certificate",
+  "policies": [
+    "fixed_bias_8",
+    "pilot_zero_failures",
+    "worst_tick_uniform",
+    "workflow_uniform",
+    "workflow_allocated",
+    "constant_schedule"
+  ],
+  "cap_ablation": "Every stochastic policy is evaluated both uncapped and capped at public V; same bias and risk allocation reused across cap ablation. Constant V per tick is a mandatory stronger-privacy baseline.",
+  "pilot_repetitions_per_pattern": 128,
+  "validation_repetitions_per_pattern": 5000,
+  "validation_subset": "N in {3,20}, K=20, heterogeneous, epsilon_session=4; all M,rho choices; early,spread,late",
+  "budget_sweep_factors": [
+    0.8,
+    1.0,
+    1.2
+  ],
+  "heterogeneous_budget_shares": "reference uniform-workflow upper cost times cycle [.90,1.15,1.30], orchestrator 1.10; synthetic stress design, not empirical energy",
+  "cost": "public weighted bytes + fixed tick-awake proxy; not calibrated joules",
+  "seeds": {
+    "pilot": 2026102701,
+    "validation": 2026102702
+  },
+  "resource_guard": "batch <=512 repetitions; no per-packet output; max wall 900s"
+}

@@ -1,0 +1,5 @@
+# Example site list for scripts/run_testbed_sessions.py (addresses are placeholders).
+sites:
+  - {host: 10.0.0.2, port: 8000, node_class: x86_server}
+  - {host: 10.0.0.3, port: 8000, node_class: raspberry_pi_5}
+  - {host: 10.0.0.4, port: 8000, node_class: jetson}

@@ -1,0 +1,54 @@
+# Template for REAL runs on the Mac Studio / testbed. Fill every TODO before running.
+# This repository does not download data; place it under data.root as in docs/data_format.md.
+# All relative paths below are resolved against the directory you run the command from.
+# Every stage runs per number of sites N; E1 also per LLM.
+run:
+  name: fgcs_e1_e5
+  id: null                                # TODO: immutable acquisition/run ID
+  deployment_id: null                     # TODO: hardware/network deployment identity
+  seed: 0
+  output_dir: runs/results/real_run01     # results + run_metadata.json land here (relative to the CURRENT directory)
+  data_kind: real
+data:
+  source: directory                       # manifests/ + captures/ written by the testbed
+  root: /path/to/runs/run01               # TODO: absolute path on the Mac Studio
+  gap_s: 0.010                            # message reconstruction gap (audit A-3)
+split: {fractions: [0.4, 0.3, 0.3], seed: 0}
+attack:
+  n_estimators: 200
+  n_boot: 1000
+  models: [rf, rf_linkaware, identity, cnn] # install optional CNN and keep public-identity diagnostics
+  chance_mode: site_conditioned           # diagnostic; global chance is also retained
+  cnn: {slice_s: 0.25, n_slices: 120, epochs: 100, lr: 0.001, batch_size: 256, val_fraction: 0.2, patience: 8}
+energy:
+  cost_models:                            # fitted with scripts/fit_cost_model.py (never placeholders)
+    default: models/x86_server.json       # TODO
+    x86_server: models/x86_server.json    # TODO
+    raspberry_pi_5: models/raspberry_pi_5.json   # TODO
+    jetson: models/jetson.json            # TODO
+    orchestrator: models/mac_studio.json  # TODO: the orchestrator host has its own coefficients
+    # each model JSON needs <name>.fit_report.json beside it (written by fit_cost_model.py)
+  measured_energy_csv: measurements/session_energy.csv   # TODO: strict paired-v2; see docs/energy_measurement_v2.md
+  fit_max_relative_rmse: 0.2              # predeclared held-out validation gate
+  grid_g_per_kwh: null                    # TODO: grid intensity (g CO2e/kWh) with its source
+  grid_factor_source: null
+grid:                                     # Sec. 6.3
+  padding: {ratio: [1.25, 1.5, 2.0, 4.0], base: [512]}
+  rounds: {window: [0.25, 0.5, 1.0], cover_prob: [0.0, 0.5, 1.0], reply_frame: [16384]}  # TODO: R at median and p95 reply size
+  dp: {mode: [queue, arrivals], interval: [0.5, 1.0, 2.0], eps_dir: [1.0, 2.0, 4.0, 8.0],
+       delta_percentile: [95.0, 100.0], horizon: [20.0], sensitivity_mode: [bounded_pair]}
+budgets:
+  site_J: []                              # TODO (required for real data): budgets spanning the MEASURED cost range
+  orchestrator_J: null
+baselines:
+  fixed_padding_percentile: 99.0
+  netshaper_root: null                    # TODO: run directory of NetShaper captures (N-1)
+experiments:
+  e4: {repeat_e3: true}                   # Sec. 7.4 repeats E2 and E3 per node class
+  e5: {alpha: 0.6, strict_target: true, e_min_per_site: {}, e_min_source: null, query_mixes: [[aggregate, group_by, train_round, record_count], [aggregate, record_count], [group_by, train_round]]}
+
+# Provenance gate; hosted-model client depends on the selected provider/API.
+testbed:
+  llms:
+    local: null                           # TODO: model/digest/serving/prompt/decoding/access record
+    hosted: null                          # TODO: provider/model/API provenance; secrets only via environment

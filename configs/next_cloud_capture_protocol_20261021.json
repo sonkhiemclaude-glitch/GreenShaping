@@ -1,0 +1,107 @@
+{
+  "phase": "next_bounded_matched_observer_calibration",
+  "enabled": false,
+  "cloud_start_allowed": false,
+  "partition": "train",
+  "final_test_executed": false,
+  "logical_sites": 20,
+  "physical_data_sites": 1,
+  "physical_roles": {
+    "T1": "TLS client and primary session ledger",
+    "T2": "middlebox client or opaque TCP relay; primary inter-middlebox observer",
+    "T3": "middlebox server or opaque TCP relay; corroborating raw capture",
+    "T4": "HIGGS endpoint and separate TLS evidence replica on port 8000"
+  },
+  "observer": {
+    "interface": "ens5",
+    "bpf": "host 172.31.34.237 and host 172.31.38.41 and (tcp or udp)",
+    "common_fields": [
+      "packet timestamp",
+      "direction",
+      "IPv4 total packet length including transport headers and ACKs"
+    ],
+    "logical_links_observed": 1,
+    "per_site_flow_mapping": false,
+    "management_traffic": "T1-to-T4 backup traffic excluded from declared inter-middlebox observer; no global-observer claim",
+    "wire_gate": "Record MTU/NIC offloads; reject unexplained superpackets, fragments, truncation, drops or incomplete coverage"
+  },
+  "topologies": {
+    "greenshaping": "T1 verified end-to-end TLS -> T2 opaque TCP relay -> T3 opaque TCP relay -> T4 tool endpoint",
+    "netshaper": "T1 verified end-to-end TLS -> T2 upstream peer1 -> QUIC/UDP -> T3 upstream peer2 -> T4 tool endpoint"
+  },
+  "modes": [
+    "none",
+    "pad",
+    "rounds",
+    "dp",
+    "combo",
+    "netshaper_no_shaping",
+    "netshaper_shaping"
+  ],
+  "questions": 12,
+  "repetitions": 2,
+  "planned_sessions": 168,
+  "runtime": {
+    "engineering_estimate_minutes": [
+      25,
+      35
+    ],
+    "hard_limit_minutes": 45,
+    "basis": "84-session cloud correctness check: GreenShaping 60 sessions=231.34s; upstream no-shaping/shaping 12 sessions=16.39s/20.47s, plus deployment/capture/backup margin",
+    "estimate_not_guarantee": true,
+    "no_auto_extension": true
+  },
+  "durability": {
+    "immutable_intent_before_session": true,
+    "atomic_fsync_commit_after_session": true,
+    "sha256_verified_replica_before_next_session": true,
+    "resume": "Audit committed sessions; interrupted acquisition never auto-replayed or appended as a new independent repetition",
+    "raw_capture": "Preserve both T2 and T3 pcaps plus capture loss/stop logs; no ring overwrite",
+    "archives": "Verified copy to Mac Studio plus controller; no removal before restore verification"
+  },
+  "scientific_limits": [
+    "TRAIN calibration only, insufficient for confirmatory attacker accuracy",
+    "NetShaper noiseMultiplier does not establish matched epsilon/adjacency",
+    "One shared multiplexed observer link cannot be relabeled as 20 observable site links",
+    "No calibrated physical energy measurements on EC2",
+    "No 10 Gbps throughput claim",
+    "Full answer-agent utility and final-test acquisition remain separate gates"
+  ],
+  "ready_for_main_paper_run": false,
+  "gates_pending": [
+    "Per-phase resource/clock and capture validity gates"
+  ],
+  "offline_preparation_passed": true,
+  "prepared_mac_root": "[LOCAL]/matched_capture_20261021_05",
+  "runtime_bundle": "outputs/offline_resilience_20261021/runtime_06.tar.gz",
+  "command_after_authorized_restart": [
+    ".venv/bin/python",
+    "scripts/launch_mac_cloud_batch.py",
+    "--run-id",
+    "matched_capture_20261021_02",
+    "--runtime",
+    "outputs/offline_resilience_20261021/runtime_05.tar.gz",
+    "--out",
+    "outputs/offline_resilience_20261021/mac_cloud_prepared_02",
+    "--install-and-start",
+    "--max-seconds",
+    "2700"
+  ],
+  "last_attempt": {
+    "run_id": "matched_capture_20261021_05",
+    "status": "completed_168_of_168_all_phase_gates_passed",
+    "launch": {
+      "mac": {
+        "queue": "[LOCAL]/queue",
+        "deadline_epoch": 1792588678.2866838,
+        "launch_agent": "org.greenshaping.cloud.matched_capture_20261021_05"
+      },
+      "remote_root": "[REMOTE]/matched_capture_20261021_05",
+      "cloud_started": true,
+      "epoch": 1792586121.276216,
+      "user_managed_instance_stop": true
+    }
+  },
+  "completed_sessions": 168,
+  "passed_phases": 7
+}

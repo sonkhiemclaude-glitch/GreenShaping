@@ -1,0 +1,21 @@
+{
+  "source_sha256": "ea302c18164d4e3d916a1e2e83a9a8d07069fa6ebc7771e4c0540d54e593b698",
+  "rows": 11000000,
+  "seed": 20261027,
+  "projection_columns": [
+    "label",
+    "feature_01",
+    "feature_02"
+  ],
+  "dtype": "float64",
+  "cohort_assignment": "seeded permutation rank % 5: train=0,1,2; select=3; test=4",
+  "site_assignment": "(permutation rank // 5) % N",
+  "physical_sites": false,
+  "global_cohort_independent_of_N": true,
+  "test_queries_executed": false,
+  "files": {
+    "projection.npy": "3cccd14489c7be479d7f7ae7bb6a8e6f871d1c59047bb307bdcb3848b7dde613",
+    "order.npy": "dd80be8edffe4dbf9c4cc5d7eb0532ee2e3b50eaff4665c11a17f6616fb957e9",
+    "train_feature_sorted.npy": "7453b5e70db7d1d299c1f07822a823803cb9d70f6cc6cea5de04275c7d579c14"
+  }
+}

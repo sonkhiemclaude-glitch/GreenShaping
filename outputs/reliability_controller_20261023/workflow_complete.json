@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "scenarios": 32,
+  "synthetic_adaptive_jobs": 160000,
+  "scalar_crosschecked_jobs": 1024,
+  "contract_violations_tested": 32,
+  "byte_ratio_range": [
+    0.07692307692307693,
+    0.38461538461538464
+  ],
+  "observed_metadata_privacy_scope": "abstract application frames only; no wire-level claim"
+}

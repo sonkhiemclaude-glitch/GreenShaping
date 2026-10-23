@@ -1,0 +1,33 @@
+{
+  "seed": 2026102801,
+  "jobs_per_scenario": 5000,
+  "N": [
+    3,
+    20
+  ],
+  "public_round_cap": [
+    3,
+    5
+  ],
+  "interval_s": [
+    0.1,
+    0.5
+  ],
+  "compute_bound_s": [
+    0.2,
+    1.0
+  ],
+  "planning_bound_s": 0.1,
+  "heterogeneity": [
+    "uniform",
+    "heterogeneous"
+  ],
+  "actual_rounds": "uniform integer 1..public cap",
+  "participation": "independent 0.5/site/round, at least one active",
+  "actual_delays": "uniform within public bounds",
+  "byte_metric": "fixed public application frames; no IP/TLS measurements",
+  "baseline": "constant public frame cap per direction at every tick until same public horizon",
+  "privacy_scope": "abstract scheduled frame metadata only; private completion/abort status must not escape observer segment",
+  "contract_violation_check": "one over-bound compute case per scenario; fixed trace retained",
+  "final_test_bank_accessed": false
+}

@@ -1,0 +1,172 @@
+{
+  "protocol": "adaptive-v4",
+  "source_version": "0.4.0",
+  "status": "locked before acquisition and final test",
+  "data_kind": "rehearsal",
+  "N": 5,
+  "physical_hosts": 1,
+  "model": "mistral-small3.1:24b",
+  "ports": [
+    18600,
+    18601,
+    18602,
+    18603,
+    18604
+  ],
+  "integration_seed": 20261023,
+  "acquisition_seed": 20261022,
+  "questions": 192,
+  "question_ids": [
+    100000,
+    100191
+  ],
+  "split": {
+    "train": 96,
+    "select": 48,
+    "test": 48
+  },
+  "modes": {
+    "none": {
+      "padding": null,
+      "fixed_unit": null,
+      "rounds": null,
+      "dp": null,
+      "name": ""
+    },
+    "pad": {
+      "padding": {
+        "ratio": 2.0,
+        "base": 512
+      },
+      "fixed_unit": null,
+      "rounds": null,
+      "dp": null,
+      "name": ""
+    },
+    "dp": {
+      "padding": null,
+      "fixed_unit": null,
+      "rounds": null,
+      "dp": {
+        "eps_dir": 4,
+        "interval": 0.05,
+        "horizon": 4.0,
+        "mode": "arrivals",
+        "bias": 100000,
+        "delta": 65536,
+        "delta_percentile": 100.0,
+        "session_start_bytes": 0,
+        "sensitivity_mode": "bounded_pair",
+        "volume_cap_bytes": 32768
+      },
+      "name": ""
+    },
+    "rounds": {
+      "padding": null,
+      "fixed_unit": null,
+      "rounds": {
+        "window": 0.05,
+        "cover_prob": 1.0,
+        "reply_frame": 2048,
+        "poll_size": 256,
+        "poll_offset": null,
+        "call_ratio": 2.0,
+        "call_base": 512,
+        "group_gap": 0.1
+      },
+      "dp": null,
+      "name": ""
+    },
+    "combo": {
+      "padding": {
+        "ratio": 2.0,
+        "base": 512
+      },
+      "fixed_unit": null,
+      "rounds": {
+        "window": 0.05,
+        "cover_prob": 1.0,
+        "reply_frame": 2048,
+        "poll_size": 256,
+        "poll_offset": null,
+        "call_ratio": 2.0,
+        "call_base": 512,
+        "group_gap": 0.1
+      },
+      "dp": {
+        "eps_dir": 4,
+        "interval": 0.05,
+        "horizon": 4.0,
+        "mode": "arrivals",
+        "bias": 100000,
+        "delta": 65536,
+        "delta_percentile": 100.0,
+        "session_start_bytes": 0,
+        "sensitivity_mode": "bounded_pair",
+        "volume_cap_bytes": 32768
+      },
+      "name": ""
+    }
+  },
+  "replications": "one live acquisition per question/mode; five attacker seeds are computational repeats",
+  "attacker_seeds": [
+    20261022,
+    20261023,
+    20261024,
+    20261025,
+    20261026
+  ],
+  "models": [
+    "rf",
+    "rf_linkaware",
+    "identity",
+    "cnn"
+  ],
+  "cnn_selection": "two prespecified candidates, train fit with group-heldout early stopping, select balanced accuracy; tie first; lock all choices before final test",
+  "cnn_candidates": [
+    {
+      "temporal_bins": 1,
+      "log_input": false
+    },
+    {
+      "temporal_bins": 4,
+      "log_input": true
+    }
+  ],
+  "cnn_fixed": {
+    "epochs": 30,
+    "batch_size": 64,
+    "patience": 8,
+    "val_fraction": 0.2,
+    "lr": 0.001
+  },
+  "resolution": {
+    "slice_s": 0.05,
+    "n_slices": 120,
+    "gap_s": 0.005
+  },
+  "bootstrap_question_groups": 500,
+  "primary_metric": "max clipped normalised advantage across four attackers and three secrets; preserve per-secret and raw scores",
+  "chance": "site-conditioned constant prior for link secrets; global for query family",
+  "comparison": "live composition versus live single defences; best single chosen from select results, test reserved for final reporting; report no benefit if observed",
+  "budget_policy": "no physical energy budget; observed byte ratios and execution windows only",
+  "contribution_label": "maximum matching rows across actual calls, not unique union; first unflagged cohort call is a superset",
+  "query_correctness": "full causal trace compared with independent local replay of real tables",
+  "synthetic_service_delays_s": [
+    0.003,
+    0.015,
+    0.035,
+    0.07,
+    0.12
+  ],
+  "private_rows_delay": "min(.08,matching_rows/1000000)",
+  "test_rule": "do not adjust workload, attack hyperparameters or transport parameters using final-test metrics; failed acquisition retained, revised protocol requires a fresh run",
+  "limitations": [
+    "single-host synthetic data, overlapping cohorts across questions",
+    "bounded typed controller, not free-form autonomous planning",
+    "not measured energy, no hosted LLM or NetShaper",
+    "public start, model planning and summary outside observed execution window",
+    "OS scheduling and transport privacy not certified",
+    "one new holdout, small test size; not confirmatory paper evidence"
+  ]
+}

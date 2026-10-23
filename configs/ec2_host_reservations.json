@@ -1,0 +1,22 @@
+{
+  "T1": {
+    "reserved": true,
+    "available_until_epoch": 0,
+    "reason": "Public artifact offline profile; configure your own authorised deployment"
+  },
+  "T2": {
+    "reserved": true,
+    "available_until_epoch": 0,
+    "reason": "Public artifact offline profile; configure your own authorised deployment"
+  },
+  "T3": {
+    "reserved": true,
+    "available_until_epoch": 0,
+    "reason": "Public artifact offline profile; configure your own authorised deployment"
+  },
+  "T4": {
+    "reserved": true,
+    "available_until_epoch": 0,
+    "reason": "Public artifact offline profile; configure your own authorised deployment"
+  }
+}

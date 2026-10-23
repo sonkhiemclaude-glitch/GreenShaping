@@ -1,0 +1,3 @@
+{"session_id": 3, "question_id": 4, "query_family": "group_by", "start_time": 1000.0, "llm": "none (format example)",
+ "sites": [{"ip": "10.0.0.2", "port": 8000, "participates": 1, "matching_rows": 50000, "node_class": "x86_server"},
+           {"ip": "10.0.0.3", "port": 8000, "participates": 0, "matching_rows": null, "node_class": "raspberry_pi_5"}]}

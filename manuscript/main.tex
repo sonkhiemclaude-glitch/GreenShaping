@@ -1,0 +1,111 @@
+\documentclass[5p,times]{elsarticle}
+% FGCS: elsarticle with 5p,times (FGCS Author Information Pack, 7 Jan 2023); numbered references.
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{microtype}
+\setlength{\emergencystretch}{1.5em}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise,nameinlink]{cleveref}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\crefname{remark}{Remark}{Remarks}
+\crefname{proposition}{Proposition}{Propositions}
+\crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{equation}{Eq.}{Eqs.}
+
+% Draft markers: must be empty before submission (checked by audit scan).
+\DeclareRobustCommand{\authorfield}[1]{\textcolor{red!70!black}{[#1]}}
+
+\journal{Future Generation Computer Systems}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Green Shaping: Energy-Aware Design and Validation of Metadata Protection for LLM-Orchestrated Federated Analytics}
+
+% Author names link to the ORCID records supplied by the corresponding team.
+\author[aff1]{\mbox{\href{https://orcid.org/0000-0003-0991-6157}{Lam Nguyen Tran Thanh}}}
+\ead{thanhlam.bk.2110@gmail.com}
+\author[aff2]{\mbox{\href{https://orcid.org/0000-0002-5674-7985}{Thanh Pham Chi}}}
+\ead{thanh.pham@rmit.edu.vn}
+\author[aff3]{\mbox{\href{https://orcid.org/0000-0002-5336-0566}{Son Ha Xuan}}}
+\ead{ha.son@rmit.edu.vn}
+\author[aff4]{\mbox{\href{https://orcid.org/0000-0001-9152-6208}{Nguyen Ngoc Phien}}\corref{cor1}}
+\ead{nguyenngocphien@tdtu.edu.vn}
+\author[aff5]{\mbox{\href{https://orcid.org/0009-0000-2881-0943}{Vo Hong Khanh}}}
+\ead{khanhvh@fe.edu.vn}
+\author[aff5]{\mbox{\href{https://orcid.org/0009-0009-4235-584X}{Nguyen Minh Triet}}}
+\ead{trietnm3@fe.edu.vn}
+\author[aff6]{\mbox{\href{https://orcid.org/0009-0009-0116-1619}{Duy Pham Dang Xuan}}}
+\ead{duy25msa23258@fsb.edu.vn}
+\author[aff6]{\mbox{\href{https://orcid.org/0009-0003-5046-5535}{Tung Nguyen Quang}}}
+\ead{NguyenQuangTung0902@gmail.com}
+\cortext[cor1]{Corresponding author.}
+\address[aff1]{Ho Chi Minh City University of Technology and Engineering, 01 Vo Van Ngan Street, Thu Duc Ward, Ho Chi Minh City, Vietnam}
+\address[aff2]{Electronic and Computer Systems Engineering (SSET), RMIT, SGS campus, Vietnam}
+\address[aff3]{Digital Economy, The Business School (TBS), RMIT, Ho Chi Minh City, Vietnam}
+\address[aff4]{Center for Applied Information Technology and Faculty of Information Technology, Ton Duc Thang University, Ho Chi Minh City, Vietnam}
+\address[aff5]{FPT University, Cantho Campus, Vietnam}
+\address[aff6]{FPT University, Ho Chi Minh City Campus, Vietnam}
+
+\begin{abstract}
+An LLM planner can turn an analyst's question into federated tool calls, whose encrypted traffic still exposes sizes, timing and participation metadata. Protecting that metadata consumes resources at data sites, including sites sending only cover traffic. We present Green Shaping, an energy-aware design combining bucketed padding, synchronised rounds with cover sites and fixed-tick differentially private byte release. The analysis bounds padded-size information, establishes a per-site energy floor for hiding participation, scopes the release guarantee under feedback and derives its padding cost; the queue-length variant has quadratic tick-count growth at a fixed privacy budget. An energy-budgeted controller is formulated with symbolic per-node costs. We evaluate the implementation on a projection of public HIGGS data using 20 logical partitions. Functional/cost calibration completes 360 TRAIN and 216 SELECT trials, retaining 12 failures, while two local LLMs pass 48 repaired typed-plan and structured-summary checks. A four-instance EC2 deployment completes 168 reference-correct three-step-workflow sessions across seven modes, with matched network captures and replicated evidence. The evaluation reports network bytes, latency, correctness and recovery integrity. Retrospective classifiers probe leakage; public-contract bounds, synthetic admission tests and paired loopback TLS experiments expose reliability and resource limits. Physical joules and edge performance remain unmeasured; no empirical privacy-per-joule optimum is established. The results expose substantial framing and DP release costs and provide a reproducible basis for later instrumented privacy--energy evaluation.
+\end{abstract}
+
+\begin{keyword}
+federated analytics \sep LLM agents \sep traffic analysis \sep traffic shaping \sep differential privacy \sep energy efficiency
+\end{keyword}
+
+\end{frontmatter}
+
+\input{s1_intro}
+\input{s2_related}
+\input{s3_model}
+\input{s4_design}
+\input{s5_analysis}
+\input{s6_method}
+\input{s7_results}
+\input{s8_discussion}
+
+\section*{CRediT authorship contribution statement}
+\textit{Proposed role allocation for confirmation by all authors before submission.}
+
+\textbf{Lam Nguyen Tran Thanh:} Conceptualization, Methodology, Formal analysis, Writing -- original draft.
+\textbf{Thanh Pham Chi:} Methodology, Software, Validation, Writing -- review \& editing.
+\textbf{Son Ha Xuan:} Conceptualization, Supervision, Resources, Project administration, Writing -- review \& editing.
+\textbf{Nguyen Ngoc Phien:} Methodology, Supervision, Validation, Project administration, Writing -- review \& editing.
+\textbf{Vo Hong Khanh:} Software, Investigation, Data curation, Writing -- review \& editing.
+\textbf{Nguyen Minh Triet:} Software, Formal analysis, Visualization, Writing -- review \& editing.
+\textbf{Duy Pham Dang Xuan:} Investigation, Data curation, Validation, Visualization, Writing -- review \& editing.
+\textbf{Tung Nguyen Quang:} Software, Investigation, Validation, Visualization, Writing -- review \& editing.
+
+\section*{Declaration of competing interest}
+\authorfield{To be completed by the authors. Do not state ``none'' unless every author confirms it.}
+
+\section*{Funding}
+This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
+
+\section*{Acknowledgements}
+We acknowledge the support of time and facilities provided by HCMC University of Technology and Engineering (HCM-UTE) for this study. \textit{This project was also undertaken with the assistance of computing resources from RACE (RMIT Advanced Computing Ecosystem).}
+
+\section*{Data availability}
+The source code, de-identified packet metadata, derived evaluation data and reproducibility scripts are available in the \href{https://github.com/sonkhiemclaude-glitch/GreenShaping}{GreenShaping repository on GitHub}. The underlying HIGGS dataset is available from the UCI Machine Learning Repository under CC BY 4.0~\cite{whiteson2014higgs}; the repository supplies the source hash, projection manifest and generation code. Unredacted network captures and the reserved final-test bank are not included in this release. Reuse terms are described in the repository.
+
+\section*{Declaration of generative AI and AI-assisted technologies in the manuscript preparation process}
+\authorfield{Draft for author confirmation after the authors have reviewed all AI-assisted content: During the preparation of this work the author(s) used Claude (Anthropic) and Codex (OpenAI) in order to draft and edit text, develop and check the formal analysis, write the reference implementation and its tests, and prepare figures using TikZ/PGFPlots and Python/Matplotlib. After using this tool/service, the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the published article.}
+
+\bibliographystyle{elsarticle-num}
+\bibliography{references_verified}
+
+\end{document}

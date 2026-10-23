@@ -1,0 +1,151 @@
+{
+  "scope": "Publication derivative, payload and address information omitted; public clock origin shifted independently per phase",
+  "inputs": {
+    "T2_none": {
+      "pcap_sha256": "29c9ccb9cf64d959ca22425d59766264b02fb127eedabde9ce8f62841d1d12d0"
+    },
+    "T3_none": {
+      "pcap_sha256": "bca3712c4a54e129a08cc0088d6706d03a3af9c4ab062ac170f6069eb310f46a"
+    },
+    "T2_pad": {
+      "pcap_sha256": "c8967311fa4d12bf2ecdd8668a2a5d7ae1ddc7b1324d1e89536e2370a42c8d58"
+    },
+    "T3_pad": {
+      "pcap_sha256": "4145e52ea6a892ca8c120e92a74d91d7964222be416fc29f028cf72e04d48d93"
+    },
+    "T2_rounds": {
+      "pcap_sha256": "0bd32feb8586b26b3902547644633bf6168addb3f8cb660eacda0a1ad3e6029c"
+    },
+    "T3_rounds": {
+      "pcap_sha256": "31a171b3a6ca19503e52025ccd631926748d2869b9252810425229ee0f215001"
+    },
+    "T2_dp": {
+      "pcap_sha256": "e0bd58697f97823edebf5fa0a223a42b1b63eaf2f3498ff39b4891281c0a98fd"
+    },
+    "T3_dp": {
+      "pcap_sha256": "38ef825096feefbe069ecc95a6830db02750ddc232f291603f735d830d1ea60f"
+    },
+    "T2_combo": {
+      "pcap_sha256": "22a97013e634d34515a3872c3d6dc405e3bd697e08e07bc85e3e46715a460a49"
+    },
+    "T3_combo": {
+      "pcap_sha256": "5ed16c53fbdfe1a155a8d1cb739dd7528b1d117227038303de40c648f60ee42b"
+    },
+    "T2_netshaper_no_shaping": {
+      "pcap_sha256": "27f6574393f276777be9723617f72901a0d0f1be4271ee9b13fcd9e68990681b"
+    },
+    "T3_netshaper_no_shaping": {
+      "pcap_sha256": "00fcb747a951148e1bb510173e4605c5b9b5d95ce957dd51d39099f8782249b7"
+    },
+    "T2_netshaper_shaping": {
+      "pcap_sha256": "6f143b22b3ce9af472a051ba185a8482fecae8c9a3224a20b4172b6b5b974ca9"
+    },
+    "T3_netshaper_shaping": {
+      "pcap_sha256": "4076ffb18664ca3d9d16031465855034794e5c343ec8656d897ed343aa5b1ca7"
+    }
+  },
+  "outputs": {
+    "outputs/public_ec2/packets_T2_none.csv.gz": {
+      "sha256": "04126b4995af20cee8f3cbc6d1aa0c5ff852f79aa28a60a9c5451488a35c1966",
+      "packets": 4765,
+      "ip_bytes": 8445088,
+      "source_pcap_sha256": "29c9ccb9cf64d959ca22425d59766264b02fb127eedabde9ce8f62841d1d12d0"
+    },
+    "outputs/public_ec2/packets_T3_none.csv.gz": {
+      "sha256": "56bf91433302ad17cf0f6fb6fcc0cbaa752a239f270fc4d96d89408598b9267d",
+      "packets": 4765,
+      "ip_bytes": 8445088,
+      "source_pcap_sha256": "bca3712c4a54e129a08cc0088d6706d03a3af9c4ab062ac170f6069eb310f46a"
+    },
+    "outputs/public_ec2/packets_T2_pad.csv.gz": {
+      "sha256": "935e6304dead346e38364d61178a3f9915d7254f22e2420aea3c8c1fac95a887",
+      "packets": 4770,
+      "ip_bytes": 8712292,
+      "source_pcap_sha256": "c8967311fa4d12bf2ecdd8668a2a5d7ae1ddc7b1324d1e89536e2370a42c8d58"
+    },
+    "outputs/public_ec2/packets_T3_pad.csv.gz": {
+      "sha256": "91d5a48742d37a78231bc69c88f2004ff5018fd128883d1da6f9833c169a4378",
+      "packets": 4770,
+      "ip_bytes": 8712292,
+      "source_pcap_sha256": "4145e52ea6a892ca8c120e92a74d91d7964222be416fc29f028cf72e04d48d93"
+    },
+    "outputs/public_ec2/packets_T2_rounds.csv.gz": {
+      "sha256": "c39cf07071d5e4881cbb8095db0cb136d6291f9cbe8124f595df636ba5bd7a90",
+      "packets": 6560,
+      "ip_bytes": 9486980,
+      "source_pcap_sha256": "0bd32feb8586b26b3902547644633bf6168addb3f8cb660eacda0a1ad3e6029c"
+    },
+    "outputs/public_ec2/packets_T3_rounds.csv.gz": {
+      "sha256": "ea427827b4e6579d11d204685aaef115c7d7d9bc4ab1c9ccf3093129473fed92",
+      "packets": 6560,
+      "ip_bytes": 9486980,
+      "source_pcap_sha256": "31a171b3a6ca19503e52025ccd631926748d2869b9252810425229ee0f215001"
+    },
+    "outputs/public_ec2/packets_T2_dp.csv.gz": {
+      "sha256": "d24f0b04334b296bd8948ef8f603746fd315105a42367539f53087c491b8cab3",
+      "packets": 303215,
+      "ip_bytes": 1882445533,
+      "source_pcap_sha256": "e0bd58697f97823edebf5fa0a223a42b1b63eaf2f3498ff39b4891281c0a98fd"
+    },
+    "outputs/public_ec2/packets_T3_dp.csv.gz": {
+      "sha256": "41837493180fcba698d69e92c23fa1852499c04dec83be8bbc837931653c361e",
+      "packets": 303215,
+      "ip_bytes": 1882445533,
+      "source_pcap_sha256": "38ef825096feefbe069ecc95a6830db02750ddc232f291603f735d830d1ea60f"
+    },
+    "outputs/public_ec2/packets_T2_combo.csv.gz": {
+      "sha256": "a4a5a2849dd2851bc74adf1cec294fc08a10bca97b3b78ae2053a18f844522d0",
+      "packets": 490703,
+      "ip_bytes": 3299303959,
+      "source_pcap_sha256": "22a97013e634d34515a3872c3d6dc405e3bd697e08e07bc85e3e46715a460a49"
+    },
+    "outputs/public_ec2/packets_T3_combo.csv.gz": {
+      "sha256": "6692bf569c2511e2b3f6a1c538e50a8966e2e2d39e3b84a86c8eb23758de109e",
+      "packets": 490703,
+      "ip_bytes": 3299303959,
+      "source_pcap_sha256": "5ed16c53fbdfe1a155a8d1cb739dd7528b1d117227038303de40c648f60ee42b"
+    },
+    "outputs/public_ec2/packets_T2_netshaper_no_shaping.csv.gz": {
+      "sha256": "8dd9cab27f3bd4ed1747b43e3eb30e2501ab1653ccbebf3e9759f57d05ef3eb7",
+      "packets": 7437,
+      "ip_bytes": 9623048,
+      "source_pcap_sha256": "27f6574393f276777be9723617f72901a0d0f1be4271ee9b13fcd9e68990681b"
+    },
+    "outputs/public_ec2/packets_T3_netshaper_no_shaping.csv.gz": {
+      "sha256": "cd5c1eebd3d44156f482a4504fcba3e7821c1c4c145f3d8682130a3b8ea0aecf",
+      "packets": 7437,
+      "ip_bytes": 9623048,
+      "source_pcap_sha256": "00fcb747a951148e1bb510173e4605c5b9b5d95ce957dd51d39099f8782249b7"
+    },
+    "outputs/public_ec2/packets_T2_netshaper_shaping.csv.gz": {
+      "sha256": "a7286601cbfc772bd8e7107306b076202cfff869253970588658880b0860d7f0",
+      "packets": 45592,
+      "ip_bytes": 63050970,
+      "source_pcap_sha256": "6f143b22b3ce9af472a051ba185a8482fecae8c9a3224a20b4172b6b5b974ca9"
+    },
+    "outputs/public_ec2/packets_T3_netshaper_shaping.csv.gz": {
+      "sha256": "6070935c0b63833c9044f38af519d01176b94814e95ea72191746b74658dd6f1",
+      "packets": 38945,
+      "ip_bytes": 53878950,
+      "source_pcap_sha256": "4076ffb18664ca3d9d16031465855034794e5c343ec8656d897ed343aa5b1ca7"
+    },
+    "outputs/public_local_tls/initial/packets.csv.gz": {
+      "sha256": "519fde753250feb894f8dbd587601b09842ab2c3aa59ebedba5f81d9ec7d18cc",
+      "packets": 14052,
+      "ip_bytes": 5398980,
+      "source_pcap_sha256": "4348ef163a438b03274f894d0ad598559b3ddc0b23f406722ce3c0d51c9555d2"
+    },
+    "outputs/public_local_tls/repaired/packets.csv.gz": {
+      "sha256": "fa34638953f6edc1ec166f60f560a65c10782c48ce77f90cb80f2127155ce0ed",
+      "packets": 14041,
+      "ip_bytes": 5398432,
+      "source_pcap_sha256": "2e1d03128998be0b30c1e35bff4aa0bb2f40250d979e403e00d322d795972164"
+    },
+    "outputs/public_local_tls/frequency/packets.csv.gz": {
+      "sha256": "80f0dd657f10f84c57e47a21662ee6a8038c351d5b0760b9c9d880374c846841",
+      "packets": 17054,
+      "ip_bytes": 6296618,
+      "source_pcap_sha256": "f57e482ea23af31b45b732ec133ccd48907dd2e3e967a8538cb3be372ee97b80"
+    }
+  }
+}

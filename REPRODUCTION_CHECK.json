@@ -1,0 +1,76 @@
+{
+  "data_files_sha256_verified": 105,
+  "mac_calibration": {
+    "train": {
+      "n": 360,
+      "passed": 349
+    },
+    "select": {
+      "n": 216,
+      "passed": 215
+    }
+  },
+  "cloud": {
+    "none": {
+      "sessions": 24,
+      "mean_T2_IP_MB": 0.3493534166666667
+    },
+    "pad": {
+      "sessions": 24,
+      "mean_T2_IP_MB": 0.3604760833333333
+    },
+    "rounds": {
+      "sessions": 24,
+      "mean_T2_IP_MB": 0.3923214166666667
+    },
+    "dp": {
+      "sessions": 24,
+      "mean_T2_IP_MB": 78.432703125
+    },
+    "combo": {
+      "sessions": 24,
+      "mean_T2_IP_MB": 137.46850770833333
+    },
+    "netshaper_no_shaping": {
+      "sessions": 24,
+      "mean_T2_IP_MB": 0.3959384166666667
+    },
+    "netshaper_shaping": {
+      "sessions": 24,
+      "mean_T2_IP_MB": 1.3137874583333333
+    }
+  },
+  "cloud_packets_reconciled": 1719437,
+  "model_checks": 48,
+  "local_tls_phases": {
+    "initial": {
+      "positive": 64,
+      "positive_passed": 63,
+      "stress_reported": 20,
+      "packets": 14052
+    },
+    "repaired": {
+      "positive": 64,
+      "positive_passed": 64,
+      "stress_reported": 20,
+      "packets": 14041
+    },
+    "frequency": {
+      "positive": 96,
+      "positive_passed": 96,
+      "stress_reported": 30,
+      "packets": 17054
+    }
+  },
+  "final_paired_comparisons": {
+    "periodic_6": {
+      "byte_saving_percent": 33.38176120045764,
+      "internal_tool_p95_ratio": 1.0003512257589378
+    },
+    "periodic_10": {
+      "byte_saving_percent": 53.90853577544272,
+      "internal_tool_p95_ratio": 1.6492512715032766
+    }
+  },
+  "new_experiment_or_final_test_execution": false
+}

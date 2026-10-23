@@ -1,0 +1,248 @@
+{
+  "input_files_hash_verified": 261,
+  "ledger": {
+    "committed": 126,
+    "passed": 126,
+    "incomplete": [],
+    "checksum_verified": true,
+    "automatic_replay_allowed": false
+  },
+  "capture_reconciliation": {
+    "pcap_packets": 17054,
+    "tcpdump_packets_captured": 17054,
+    "kernel_drops": 0,
+    "captured_ip_bytes": 6296618,
+    "assigned_ip_bytes": 6296618,
+    "unassigned_packets": 0,
+    "flows": 378,
+    "physical_hosts": 1,
+    "interface": "lo0",
+    "metric": "captured loopback IPv4 lengths, not a physical NIC byte counter",
+    "passed": true
+  },
+  "contract": {
+    "rounds": 3,
+    "interval": 0.04,
+    "compute_bound": 0.08,
+    "planning_bound": 0.04,
+    "call_caps": [
+      512,
+      512,
+      512
+    ],
+    "reply_caps": [
+      1024,
+      1024,
+      1024
+    ],
+    "delivery_bound": 0.0
+  },
+  "policies": {
+    "envelope": {
+      "positive_n": 32,
+      "contract_success": 32,
+      "binomial_95_ci": [
+        0.8911188393206471,
+        1.0
+      ],
+      "stress_n": 10,
+      "stress_expected_failure_gate_passed": 10,
+      "positive_mean_ip_bytes": 32097.75,
+      "positive_tool_p50_s": 0.40723466873168945,
+      "positive_tool_p95_s": 0.6100648283958435,
+      "all_trials_max_send_completion_lag_s": 0.010854737600311637,
+      "cohorts": {
+        "select_base": {
+          "n": 16,
+          "contract_success": 16
+        },
+        "select_shifted": {
+          "n": 16,
+          "contract_success": 16
+        }
+      },
+      "stress_by_type": {
+        "call_oversize": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        },
+        "compute_miss": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        },
+        "compute_over": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        },
+        "planning_over": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        },
+        "reply_oversize": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        }
+      }
+    },
+    "periodic_10": {
+      "positive_n": 32,
+      "contract_success": 32,
+      "binomial_95_ci": [
+        0.8911188393206471,
+        1.0
+      ],
+      "stress_n": 10,
+      "stress_expected_failure_gate_passed": 10,
+      "positive_mean_ip_bytes": 69639.25,
+      "positive_tool_p50_s": 0.24586451053619385,
+      "positive_tool_p95_s": 0.36990411281585694,
+      "all_trials_max_send_completion_lag_s": 0.01238498295424506,
+      "cohorts": {
+        "select_base": {
+          "n": 16,
+          "contract_success": 16
+        },
+        "select_shifted": {
+          "n": 16,
+          "contract_success": 16
+        }
+      },
+      "stress_by_type": {
+        "call_oversize": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        },
+        "compute_miss": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        },
+        "compute_over": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        },
+        "planning_over": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        },
+        "reply_oversize": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        }
+      }
+    },
+    "periodic_6": {
+      "positive_n": 32,
+      "contract_success": 32,
+      "binomial_95_ci": [
+        0.8911188393206471,
+        1.0
+      ],
+      "stress_n": 10,
+      "stress_expected_failure_gate_passed": 10,
+      "positive_mean_ip_bytes": 48181.625,
+      "positive_tool_p50_s": 0.4069768190383911,
+      "positive_tool_p95_s": 0.6098506331443787,
+      "all_trials_max_send_completion_lag_s": 0.011634463036898524,
+      "cohorts": {
+        "select_base": {
+          "n": 16,
+          "contract_success": 16
+        },
+        "select_shifted": {
+          "n": 16,
+          "contract_success": 16
+        }
+      },
+      "stress_by_type": {
+        "call_oversize": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        },
+        "compute_miss": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        },
+        "compute_over": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        },
+        "planning_over": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        },
+        "reply_oversize": {
+          "n": 2,
+          "reported_with_fixed_cover": 2
+        }
+      }
+    }
+  },
+  "paired_comparisons": {
+    "periodic_10": {
+      "baseline": "periodic_10",
+      "independent_paired_jobs": 32,
+      "bootstrap_seed": 2026102311,
+      "bootstrap_resamples": 20000,
+      "resampling_unit": "paired new SELECT job",
+      "whole_lifecycle_ip_mean_ratio": 0.4609146422455727,
+      "whole_lifecycle_ip_mean_ratio_95_ci": [
+        0.4607712003771555,
+        0.4610564669562408
+      ],
+      "application_byte_ratio": 0.3,
+      "both_policies_success_pairs": 32,
+      "interval_scope": "exploratory conditional SELECT workload; does not include contract selection uncertainty or host-to-host variation",
+      "tool_p95_ratio": 1.6492512715032766,
+      "tool_p95_ratio_95_ci": [
+        1.6455541201340855,
+        1.6522377880148633
+      ],
+      "paired_median_tool_extra_s": 0.162369966506958
+    },
+    "periodic_6": {
+      "baseline": "periodic_6",
+      "independent_paired_jobs": 32,
+      "bootstrap_seed": 2026102311,
+      "bootstrap_resamples": 20000,
+      "resampling_unit": "paired new SELECT job",
+      "whole_lifecycle_ip_mean_ratio": 0.6661823879954236,
+      "whole_lifecycle_ip_mean_ratio_95_ci": [
+        0.6659800981602731,
+        0.6663847187699461
+      ],
+      "application_byte_ratio": 0.5,
+      "both_policies_success_pairs": 32,
+      "interval_scope": "exploratory conditional SELECT workload; does not include contract selection uncertainty or host-to-host variation",
+      "tool_p95_ratio": 1.0003512257589378,
+      "tool_p95_ratio_95_ci": [
+        0.9986438776945803,
+        1.0020554126003292
+      ],
+      "paired_median_tool_extra_s": 0.0005544424057006836
+    }
+  },
+  "total_trials": 126,
+  "all_fixed_frames_valid": true,
+  "all_timing_valid": true,
+  "all_engineering_gates_passed": true,
+  "wire_privacy_certified": false,
+  "energy_measured": false,
+  "final_bank_opened": false,
+  "physical_sites": 1,
+  "logical_loopback_sites": 3,
+  "cloud_sessions": 0,
+  "cpu_load_before": [
+    7.2490234375,
+    14.69873046875,
+    24.7373046875
+  ],
+  "caveats": [
+    "scripted feedback, generated tables, no LLM timing validation",
+    "one shared host under recorded contention, no physical per-site network",
+    "same public horizon; tool completion is an internal timestamp, public session continues",
+    "packet traces can still contain workload-dependent jitter; no 0-DP wire claim",
+    "schedule byte ratio is structural; observed IP overhead and failure handling are new acquisition evidence",
+    "task family and round count are coupled by this pilot design; no independent family/round effect is estimated",
+    "a small zero-failure sample cannot verify rho=0.001"
+  ]
+}

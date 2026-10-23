@@ -1,0 +1,7 @@
+experiment,N,llm,secret,attacker,accuracy,chance,advantage,advantage_ci_low,advantage_ci_high,auc,n_test,bootstrap_dropped,result_status
+E1,4,n/a,participation,rf,1.0,0.5063291139240507,1.0,1.0,1.0,1.0,316,0,"synthetic smoke-test output, not a paper result"
+E1,4,n/a,size_bucket,rf,0.9625,0.725,0.8636363636363638,0.6760532591414944,1.0,nan,160,0,"synthetic smoke-test output, not a paper result"
+E1,4,n/a,query_family,rf,1.0,0.27848101265822783,1.0,1.0,1.0,nan,79,0,"synthetic smoke-test output, not a paper result"
+E1,6,n/a,participation,rf,1.0,0.5123456790123457,1.0,1.0,1.0,1.0,486,0,"synthetic smoke-test output, not a paper result"
+E1,6,n/a,size_bucket,rf,0.8955823293172691,0.3413654618473896,0.8414634146341464,0.7840082991910915,0.8973524762908325,nan,249,0,"synthetic smoke-test output, not a paper result"
+E1,6,n/a,query_family,rf,1.0,0.32098765432098764,1.0,1.0,1.0,nan,81,0,"synthetic smoke-test output, not a paper result"

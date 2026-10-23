@@ -1,0 +1,93 @@
+[
+  {
+    "mode": "none",
+    "label": "Unshaped + controls",
+    "passed": 24,
+    "n": 24,
+    "mean_IP_MB": 0.3493534166666667,
+    "byte_factor": 1.0,
+    "tool_p50_s": 1.1232377290725708,
+    "tool_p95_s": 1.3720263004302977,
+    "session_end_p50_s": 1.174959421157837,
+    "T2_outside_MB": 0.060606,
+    "T3_outside_MB": 0.060606
+  },
+  {
+    "mode": "pad",
+    "label": "Padding",
+    "passed": 24,
+    "n": 24,
+    "mean_IP_MB": 0.3604760833333333,
+    "byte_factor": 1.0318378642830885,
+    "tool_p50_s": 1.1264749765396118,
+    "tool_p95_s": 1.3845000386238095,
+    "session_end_p50_s": 1.1721904277801514,
+    "T2_outside_MB": 0.060866,
+    "T3_outside_MB": 0.060866
+  },
+  {
+    "mode": "rounds",
+    "label": "Rounds",
+    "passed": 24,
+    "n": 24,
+    "mean_IP_MB": 0.3923214166666667,
+    "byte_factor": 1.1229929290801746,
+    "tool_p50_s": 2.0110113620758057,
+    "tool_p95_s": 4.010942351818085,
+    "session_end_p50_s": 2.069238781929016,
+    "T2_outside_MB": 0.071266,
+    "T3_outside_MB": 0.07137
+  },
+  {
+    "mode": "dp",
+    "label": "DP (bias 1)",
+    "passed": 24,
+    "n": 24,
+    "mean_IP_MB": 78.432703125,
+    "byte_factor": 224.50818965321886,
+    "tool_p50_s": 3.0702189207077026,
+    "tool_p95_s": 7.952698040008544,
+    "session_end_p50_s": 11.07904314994812,
+    "T2_outside_MB": 0.060658,
+    "T3_outside_MB": 0.060658
+  },
+  {
+    "mode": "combo",
+    "label": "Combined (bias 2)",
+    "passed": 24,
+    "n": 24,
+    "mean_IP_MB": 137.46850770833333,
+    "byte_factor": 393.4940983831798,
+    "tool_p50_s": 3.575333595275879,
+    "tool_p95_s": 9.067578518390656,
+    "session_end_p50_s": 11.128467082977295,
+    "T2_outside_MB": 0.059774,
+    "T3_outside_MB": 0.059774
+  },
+  {
+    "mode": "netshaper_no_shaping",
+    "label": "NetShaper disabled",
+    "passed": 24,
+    "n": 24,
+    "mean_IP_MB": 0.3959384166666667,
+    "byte_factor": 1.1333463414913407,
+    "tool_p50_s": 1.177761435508728,
+    "tool_p95_s": 1.5925290942192074,
+    "session_end_p50_s": 1.2806285619735718,
+    "T2_outside_MB": 0.120526,
+    "T3_outside_MB": 0.120526
+  },
+  {
+    "mode": "netshaper_shaping",
+    "label": "NetShaper enabled",
+    "passed": 24,
+    "n": 24,
+    "mean_IP_MB": 1.3137874583333333,
+    "byte_factor": 3.7606257607804507,
+    "tool_p50_s": 1.3125653266906738,
+    "tool_p95_s": 1.681707775592804,
+    "session_end_p50_s": 1.5581414699554443,
+    "T2_outside_MB": 31.520071,
+    "T3_outside_MB": 22.348051
+  }
+]

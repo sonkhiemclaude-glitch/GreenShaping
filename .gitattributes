@@ -1,0 +1,6 @@
+# Preserve byte-for-byte publication hashes across platforms.
+* -text
+*.csv whitespace=cr-at-eol
+*.pdf binary
+*.png binary
+*.gz binary

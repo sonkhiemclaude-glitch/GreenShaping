@@ -1,0 +1,33 @@
+{
+  "reason": "Pointwise 95% lower limits above mathematical bound in initial small Monte Carlo samples; all original observations retained.",
+  "scope": "post-hoc implementation diagnostic, not confirmatory performance evaluation",
+  "seed": 2026102901,
+  "repetitions": 200000,
+  "flagged_rows": [
+    {
+      "scenario": "N3_K20_M1_heterogeneous_eps4_rho0.01",
+      "policy": "workflow_uniform",
+      "capped": false,
+      "pattern": "late"
+    },
+    {
+      "scenario": "N3_K20_M1_heterogeneous_eps4_rho0.01",
+      "policy": "workflow_allocated",
+      "capped": false,
+      "pattern": "late"
+    },
+    {
+      "scenario": "N3_K20_M1_heterogeneous_eps4_rho0.001",
+      "policy": "workflow_uniform",
+      "capped": true,
+      "pattern": "late"
+    },
+    {
+      "scenario": "N3_K20_M1_heterogeneous_eps4_rho0.001",
+      "policy": "workflow_allocated",
+      "capped": false,
+      "pattern": "late"
+    }
+  ],
+  "no_parameter_retuning": true
+}

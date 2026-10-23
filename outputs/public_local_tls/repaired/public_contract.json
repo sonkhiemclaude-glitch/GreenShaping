@@ -1,0 +1,17 @@
+{
+  "rounds": 3,
+  "interval": 0.04,
+  "compute_bound": 0.08,
+  "planning_bound": 0.04,
+  "call_caps": [
+    512,
+    512,
+    512
+  ],
+  "reply_caps": [
+    1024,
+    1024,
+    1024
+  ],
+  "delivery_bound": 0.0
+}

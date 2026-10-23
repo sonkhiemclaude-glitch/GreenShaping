@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "queue_padding_max_abs_known_variance_z": 4.117496921004091,
+  "queue_cells": 432,
+  "variance_formula": "3 K s^2/(4 n), ignoring <= K/2 byte rounding shift",
+  "self_normalized_diagnostic_max": 6.238532321479027,
+  "note": "Small heavy-tailed samples give unstable empirical standard errors; the crosscheck uses known Laplace variance. No outcomes removed.",
+  "late_arrival_cells": 720,
+  "late_overflow_formula_check_passed": true,
+  "all_three_pilot_selected_configs_have_validation_failures": true,
+  "validation_total_failures": 8,
+  "question_disjoint_fold_records": 196
+}

@@ -1,0 +1,25 @@
+{
+  "remote_root": "/offline/no-cloud",
+  "nodes": {
+    "T1": {
+      "public_ip": "127.0.0.1",
+      "private_ip": "127.0.0.1",
+      "role": "client"
+    },
+    "T2": {
+      "public_ip": "127.0.0.1",
+      "private_ip": "127.0.0.1",
+      "role": "middlebox_client"
+    },
+    "T3": {
+      "public_ip": "127.0.0.1",
+      "private_ip": "127.0.0.1",
+      "role": "middlebox_server"
+    },
+    "T4": {
+      "public_ip": "127.0.0.1",
+      "private_ip": "127.0.0.1",
+      "role": "server"
+    }
+  }
+}

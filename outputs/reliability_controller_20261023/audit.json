@@ -1,0 +1,20 @@
+{
+  "input_validation_rows": 252,
+  "certified_validation_rows": 144,
+  "retained_pointwise_95pct_sampling_flags": 4,
+  "replication_trials": 800000,
+  "simultaneous_diagnostic_threshold": 0.00034722222222222224,
+  "rows_below_threshold": 0,
+  "workflow_to_worst_expected_bound_ratio_mean": 0.798197825314856,
+  "admitted_counts_base_budget": {
+    "constant_schedule": 96,
+    "fixed_bias_8": 0,
+    "pilot_zero_failures": 0,
+    "workflow_allocated": 56,
+    "workflow_uniform": 48,
+    "worst_tick_uniform": 0
+  },
+  "all_solver_runs_successful": true,
+  "raw_sampling_flags_not_deleted": true,
+  "no_retuning_after_validation": true
+}

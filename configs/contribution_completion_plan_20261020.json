@@ -1,0 +1,212 @@
+{
+  "status": "cost_paused_cloud_transport_repaired_main_prerequisites_pending",
+  "scope": "Finish the existing privacy/energy article; preserve frozen pilot results",
+  "assessment_report": "docs/contribution_assessment_20261020.md",
+  "scientific_primary_endpoint": "Final-test maximum clipped advantage over prespecified attackers/secrets versus measured paired extra joules per physical node",
+  "physical_energy_available": false,
+  "current_ec2_powercap_counters": 0,
+  "frozen_old_holdout_must_not_be_reused_for_tuning": true,
+  "main_question_bank_proposal": {
+    "total": 480,
+    "families": 4,
+    "train": 240,
+    "select": 80,
+    "test": 160,
+    "status": "480 Covertype reference questions prepared in a later engineering stage; not locked for final acquisition because select lacks the largest manuscript size bucket",
+    "holdout_groups": [
+      "question",
+      "template/cohort",
+      "acquisition as applicable"
+    ]
+  },
+  "grid_counts_before_pruning": {
+    "current_template": 2450,
+    "two_reply_frames": 4655,
+    "single_or_none_with_two_reply_frames": 71
+  },
+  "stages": [
+    {
+      "id": "S0",
+      "task": "Reconcile claims and measurement definitions",
+      "dependencies": [],
+      "outputs": [
+        "epsilon/adjacency/cap specification",
+        "scope of energy and mean versus per-session budgets",
+        "primary contrast and failure policy"
+      ],
+      "gate": "Definitions fixed before acquisition; no same-epsilon claim across different NetShaper adjacency/accounting",
+      "implementation_status": "engineering_specification_written_final_lock_pending",
+      "evidence": "configs/prelarge_protocol_20261020.json"
+    },
+    {
+      "id": "S1",
+      "task": "Public-data workload and fresh holdout",
+      "dependencies": [
+        "S0"
+      ],
+      "outputs": [
+        "dataset DOI/license/hash manifest",
+        "query/ground-truth bank",
+        "site partition and feasible size buckets"
+      ],
+      "gate": "No duplicated data or reply inflation to fabricate contribution-size buckets; new templates/cohorts held out",
+      "implementation_status": "reference_bank_prepared_class_support_gate_failed",
+      "evidence": "outputs/preparation_20261020/workload_feasibility.json"
+    },
+    {
+      "id": "S2",
+      "task": "Natural-language agent and second-model validation",
+      "dependencies": [
+        "S1"
+      ],
+      "outputs": [
+        "validated tool planning",
+        "tool-result reference replay",
+        "model/prompt/tool-schema provenance",
+        "invalid-plan and answer-utility metrics"
+      ],
+      "gate": "No hidden scripted fallback; bounded versus autonomous scope explicit",
+      "implementation_status": "primary_natural_planner_train_regression_48_of_48_passed_full_agent_utility_and_hosted_model_pending",
+      "evidence": "outputs/preparation_20261020/planner_evidence/repair_validation/results/summary.json"
+    },
+    {
+      "id": "S3",
+      "task": "Distributed transport and matched NetShaper captures",
+      "dependencies": [
+        "S0",
+        "S1"
+      ],
+      "outputs": [
+        "physical/logical deployment mapping",
+        "per-link capture and manifests",
+        "NetShaper adapter-valid metadata",
+        "small integration results"
+      ],
+      "gate": "Same workload, site identity, observer vantage and window; correctness and accounting pass",
+      "implementation_status": "three_logical_site_TLS_correctness_passed_matched_NetShaper_pending",
+      "evidence": "outputs/preparation_20261020/integration_retry_03/integration_summary.json"
+    },
+    {
+      "id": "S4",
+      "task": "Energy instrumentation",
+      "dependencies": [
+        "S0"
+      ],
+      "needs_external_resource": true,
+      "outputs": [
+        "readable sensor preflight",
+        "scope, resolution and clock alignment",
+        "idle/shaped/unshaped pairing"
+      ],
+      "gate": "No replacement of physical joules by CPU%, bytes, EC2 nominal power or placeholder coefficients",
+      "implementation_status": "blocked_no_physical_energy_sensor",
+      "evidence": "outputs/preparation_20261020/post_readiness/summary.json"
+    },
+    {
+      "id": "S5",
+      "task": "Calibrate and validate energy model",
+      "dependencies": [
+        "S3",
+        "S4"
+      ],
+      "outputs": [
+        "at least 10 independent named acquisition runs per node class",
+        "rank-3 TX/RX/wakeup design",
+        "whole-run validation residuals"
+      ],
+      "gate": "Existing engineering gate held-out relative RMSE <=0.2, or revise protocol prospectively; never tune on final energy results"
+    },
+    {
+      "id": "S6",
+      "task": "Shortlist configurations and freeze controller selection",
+      "dependencies": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "outputs": [
+        "feasibility/overflow/utility screening",
+        "retained grid and singles",
+        "preselected budgets",
+        "locked configs and attackers"
+      ],
+      "gate": "Calibration/select only; preserve all retained feasible single baselines; no forcing composition to win"
+    },
+    {
+      "id": "S7",
+      "task": "Final acquisition E1/E2/E3",
+      "dependencies": [
+        "S6"
+      ],
+      "outputs": [
+        "fresh test captures",
+        "paired per-node energy for >=10 repetitions under current protocol",
+        "actual tool/answer latency",
+        "paired comparison intervals"
+      ],
+      "gate": "No competing throughput/energy jobs on measured hosts; retain errors, negative differences and infeasible cases"
+    },
+    {
+      "id": "S8",
+      "task": "Scaling and platform study E4/E5",
+      "dependencies": [
+        "S7"
+      ],
+      "outputs": [
+        "N=5/10/20 logical scaling or separately provisioned hosts",
+        "matched global privacy target",
+        "instrumented x86/edge evidence",
+        "symbolic versus justified measured floor"
+      ],
+      "gate": "No claim of independent physical sites or measured per-container energy when co-located; platforms match the claims"
+    },
+    {
+      "id": "S9",
+      "task": "Write actual findings and package submission",
+      "dependencies": [
+        "S7",
+        "S8"
+      ],
+      "outputs": [
+        "updated abstract/contributions/results/discussion",
+        "source/config/data provenance",
+        "author declarations/licence/release",
+        "verified journal/SI requirements"
+      ],
+      "gate": "No pending result cells presented as results; no unsupported energy superiority, 10Gbps or universal composition claims"
+    }
+  ],
+  "tasks_possible_on_current_machines": [
+    "Dataset/schema preparation",
+    "Small distributed functional integration",
+    "Fresh E1/network-only privacy/bandwidth/latency captures",
+    "Matched NetShaper capture adapter integration",
+    "Offline feasibility analysis and attacker training after acquisition ends"
+  ],
+  "not_required_for_main_contributions": [
+    "Reaching 10Gbps through NetShaper",
+    "Adding a new optimiser or RL method without an empirical need"
+  ],
+  "new_acquisition_started_in_this_review": false,
+  "engineering_protocol": "configs/prelarge_protocol_20261020.json",
+  "host_reservations": "configs/ec2_host_reservations.json",
+  "subsequent_preparation_20261020": {
+    "evidence": "outputs/preparation_20261020",
+    "network_smoke_sessions": 40,
+    "all_network_smoke_correct": true,
+    "T4_used": false,
+    "final_test_acquired": false,
+    "large_run_ready": false
+  },
+  "cost_pause_20261021": {
+    "no_new_ec2_experiment": true,
+    "workers_disabled": [
+      "T1",
+      "T2",
+      "T3"
+    ],
+    "vm_stop_is_user_managed": true,
+    "transport_version": "0.5.0",
+    "report": "docs/transport_repair_20261021.md"
+  }
+}

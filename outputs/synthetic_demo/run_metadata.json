@@ -1,0 +1,138 @@
+{
+ "package": "greenshaping",
+ "version": "0.1.0",
+ "timestamp_utc": "2026-10-19T16:34:38Z",
+ "python": "3.13.16",
+ "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+ "numpy": "2.5.3",
+ "scikit_learn": "1.9.1",
+ "data_kind": "synthetic",
+ "result_status": "synthetic smoke-test output, not a paper result",
+ "config": {
+  "run": {
+   "name": "synthetic_demo",
+   "seed": 0,
+   "output_dir": "outputs/synthetic_demo",
+   "data_kind": "synthetic"
+  },
+  "data": {
+   "source": "synthetic",
+   "synthetic": {
+    "n_sessions": 240,
+    "n_sites": [
+     4,
+     6
+    ],
+    "n_questions": 60,
+    "seed": 0
+   }
+  },
+  "split": {
+   "fractions": [
+    0.4,
+    0.3,
+    0.3
+   ],
+   "seed": 0
+  },
+  "attack": {
+   "n_estimators": 50,
+   "n_boot": 100,
+   "models": [
+    "rf"
+   ]
+  },
+  "energy": {
+   "cost_models": {},
+   "measured_energy_csv": null
+  },
+  "grid": {
+   "padding": {
+    "ratio": [
+     2.0
+    ],
+    "base": [
+     512
+    ]
+   },
+   "rounds": {
+    "window": [
+     0.5
+    ],
+    "cover_prob": [
+     0.5,
+     1.0
+    ],
+    "reply_frame": [
+     16384
+    ]
+   },
+   "dp": {
+    "mode": [
+     "queue",
+     "arrivals"
+    ],
+    "interval": [
+     1.0
+    ],
+    "eps_dir": [
+     4.0
+    ],
+    "delta_percentile": [
+     100.0
+    ],
+    "horizon": [
+     30.0
+    ]
+   }
+  },
+  "budgets": {
+   "site_J": [],
+   "orchestrator_J": null
+  },
+  "baselines": {
+   "fixed_padding_percentile": 99.0,
+   "netshaper_root": null
+  },
+  "experiments": {
+   "e4": {
+    "repeat_e3": true
+   },
+   "e5": {
+    "alpha": 0.6,
+    "query_mixes": [
+     [
+      "aggregate",
+      "group_by",
+      "train_round",
+      "record_count"
+     ],
+     [
+      "aggregate",
+      "record_count"
+     ]
+    ]
+   }
+  }
+ },
+ "inputs": [],
+ "outputs": [
+  "e1_leakage.csv",
+  "e2_primitives.csv",
+  "e3_baselines.csv",
+  "e3_budgeted.csv",
+  "e3_profiles.csv",
+  "e4_platform.csv",
+  "e5_scaling.csv"
+ ],
+ "cost_models": {
+  "default": {
+   "node_class": "placeholder",
+   "e_tx": 5e-08,
+   "e_rx": 5e-08,
+   "p_aw": 2.0,
+   "t_tail": 0.1,
+   "fitted": false
+  }
+ }
+}

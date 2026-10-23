@@ -1,0 +1,27 @@
+{
+  "publication_files_scanned": 398,
+  "data_files_sha256": 105,
+  "findings": [],
+  "calibration_original_source_hashes_verified": 578,
+  "calibration_train": {
+    "sessions": 360,
+    "passed": 349
+  },
+  "calibration_select": {
+    "sessions": 216,
+    "passed": 215
+  },
+  "raw_payloads_published": false,
+  "live_cloud_configs_replaced_with_offline_profile": true,
+  "reserved_final_bank_accessed": false,
+  "software_license_selected": false,
+  "git_index_scanned": true,
+  "all_published_payloads_below_90_MiB": true,
+  "public_data_reproduction_passed": true,
+  "metadata_feature_rows_rederived": 168,
+  "classifier_scores_reproduced": 56,
+  "full_public_regression_passed": 257,
+  "optional_torch_skip": 1,
+  "manuscript_visual_review_passed": true,
+  "byte_preserving_gitattributes": true
+}

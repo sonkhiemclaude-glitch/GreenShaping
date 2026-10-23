@@ -1,0 +1,171 @@
+{
+  "status": "offline_preparation_verified_waiting_user_bounded_ec2_restart",
+  "cloud_policy": {
+    "auto_start": false,
+    "cloud_jobs_allowed": false,
+    "user_requested_all_hosts_stop": true,
+    "actual_AWS_instance_state_verified": false,
+    "connect_to_old_public_IPs": false
+  },
+  "data": {
+    "doi": "10.24432/C5V312",
+    "source_rows": 11000000,
+    "logical_sites": [
+      5,
+      10,
+      20
+    ],
+    "projection": [
+      "label",
+      "feature_01",
+      "feature_02"
+    ],
+    "original_precision": "float64",
+    "duplicate_source_rows": false,
+    "site_identity": "simulated partitions, not independent physical institutions",
+    "source_generation": "Monte Carlo particle physics"
+  },
+  "splits": {
+    "global_record_cohort": "seeded rank modulo 5: train 0/1/2, select 3, test 4; unchanged across N",
+    "template_groups": {
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "select": [
+        6,
+        7
+      ],
+      "test": [
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    "threshold_fitting": "train records only",
+    "questions_per_N": {
+      "train": 240,
+      "select": 80,
+      "test": 160
+    },
+    "final_test_execution_allowed": false
+  },
+  "size_gates": {
+    "small": [
+      1000,
+      10000
+    ],
+    "medium": [
+      10000,
+      100000
+    ],
+    "large": [
+      100000,
+      1000000
+    ],
+    "bounds": "lower inclusive, upper exclusive",
+    "required": "all three observed buckets in every family and train/select split at each N; every intended call within its requested bucket; every site has positive and negative participation examples",
+    "failure_policy": "retain failures; revise using train and rerun audit before freeze; never silently relabel or duplicate records"
+  },
+  "mac_job": {
+    "root": "[LOCAL]/large_preparation_20261021",
+    "timeout_s": 14400,
+    "automatic_retry": false,
+    "exit_when_idle": true,
+    "ssh_disconnect_survival": true,
+    "host_reboot_survival": false,
+    "cloud_or_shared_service_changes": false
+  },
+  "next_engineering_calibration_proposal": {
+    "enabled": false,
+    "partition": "train",
+    "logical_sites": [
+      5,
+      10,
+      20
+    ],
+    "families": 4,
+    "sizes": 3,
+    "questions_per_family_size_N": 1,
+    "modes": [
+      "none",
+      "pad",
+      "rounds",
+      "DP",
+      "composition"
+    ],
+    "independent_repetitions": 2,
+    "planned_sessions": 360,
+    "max_wall_s": 5400,
+    "execution_precondition": "HIGGS size audit passes; workload adapter and planner/tool validation pass; transport source/provenance frozen; run plan duration fitted to measured timings",
+    "purpose": "transport correctness, acquisition validity and runtime sizing; insufficient replicates for confirmatory energy conclusions",
+    "on_timeout": "retain logs, mark incomplete, stop owned processes; never extend cloud window automatically"
+  },
+  "before_cloud_restart": [
+    "Offline resilience tests and real HIGGS relay/replica integration pass",
+    "Current evidence copied and checksum-verified on controller and Mac Studio",
+    "Matched observer plan and finite capture runner verified without cloud",
+    "Run-specific access for Mac Studio and deadline-bound autonomous supervisor prepared",
+    "Notify user of a concrete bounded batch and predicted runtime; verify current IPs/host keys after start",
+    "Fresh host resources/clock/disk/NIC offload preflight; no competing jobs",
+    "Per-session immutable primary commit and acknowledged replica; two-host raw capture preservation",
+    "Instance stop remains user-managed unless AWS stop access is explicitly configured"
+  ],
+  "scientific_pending": [
+    "real measured per-physical-node paired joules, no EC2 nominal-power proxy",
+    "matched NetShaper observer/topology/workload validation",
+    "frozen configuration shortlist and attacker selection",
+    "held-out final acquisition after all protocol gates",
+    "second-model and any hosted-model claims backed by actual provenance"
+  ],
+  "large_run_ready": false,
+  "extended_mac_preparation": {
+    "queue": "max_queue_01",
+    "result": "max_preparation_01/readiness.json",
+    "wait_existing_max_s": 14400,
+    "work_max_s": 14400,
+    "outer_timeout_s": 30600,
+    "TLS_sessions": {
+      "separate": 360,
+      "routed": 180,
+      "portable_roles": 60
+    },
+    "planner_smoke_cases": 144,
+    "models": [
+      "mistral-small3.1:24b",
+      "qwen2.5:14b-instruct-q4_K_M"
+    ],
+    "partitions": [
+      "train",
+      "select"
+    ],
+    "questions_per_model_N_partition": 12,
+    "test_executed": false,
+    "cloud_start_enabled": false,
+    "readiness_scope": "software readiness for bounded EC2 calibration; never paper-level readiness",
+    "notification": "local macOS LaunchAgent polls over Tailscale every 300s up to 9h; checks again on later login; no chat sender"
+  },
+  "latest_completed_cloud_calibration": {
+    "evidence": "outputs/ec2_higgs_20261021/status.json",
+    "passed": 84,
+    "physical_ec2_roles": 4,
+    "physical_data_sites": 1,
+    "logical_sites": 20,
+    "main_paper_run": false
+  },
+  "offline_resilience": {
+    "software_verified": true,
+    "Mac_full_tests_passed": 205,
+    "HIGGS_sessions_passed": 60,
+    "replica_acknowledged": 60,
+    "restore_verified_sessions": 60,
+    "actual_reboot_primary_commits_preserved": 47,
+    "controller_and_mac_archives_verified": true,
+    "evidence": "outputs/offline_resilience_20261021/status.json"
+  }
+}

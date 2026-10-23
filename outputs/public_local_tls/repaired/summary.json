@@ -1,0 +1,31 @@
+{
+  "completed": true,
+  "trials": 84,
+  "all_engineering_gates_passed": true,
+  "positive_trials": 64,
+  "positive_contract_successes": 64,
+  "stress_trials": 20,
+  "stress_detected_with_fixed_frames": 20,
+  "physical_hosts": 1,
+  "logical_sites": 3,
+  "cloud_sessions": 0,
+  "scope": "generated integer tables and scripted feedback, paired local TLS acquisition",
+  "wire_privacy_certified": false,
+  "energy_measured": false,
+  "final_bank_opened": false,
+  "private_tls_keys_retained": false,
+  "capture_started": true,
+  "capture_returncode": 0,
+  "load_after": [
+    12.84228515625,
+    17.8779296875,
+    26.921875
+  ],
+  "ledger": {
+    "committed": 84,
+    "passed": 84,
+    "incomplete": [],
+    "checksum_verified": true,
+    "automatic_replay_allowed": false
+  }
+}

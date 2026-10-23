@@ -1,0 +1,10 @@
+{
+  "cloud_jobs_allowed": false,
+  "final_test_allowed": false,
+  "stage2_status": "Mac_TRAIN_running",
+  "required_mac_free_GiB": 4,
+  "deployment_plan": "outputs/stage2_preparation_20261021/deployment_plan.json",
+  "runtime_sha256": "5c44876eca84c57acee659ec25f0e8b4d480621bdb3fb8cbe7e5c0dccf4ffa0a",
+  "ready_for_large_cloud_acquisition": false,
+  "pipeline_output_cap_MiB": 512
+}

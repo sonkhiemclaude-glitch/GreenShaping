@@ -1,0 +1,26 @@
+\section{System and threat model}\label{sec:model}
+
+\subsection{Agent-orchestrated federated analytics}
+A deployment has one orchestrator $O$ and $N$ data sites $S_1,\dots,S_N$ (\cref{fig:arch}). An analyst submits a natural-language question to $O$. An LLM agent at $O$ plans the analysis and issues \emph{tool calls}, one HTTP request to one site endpoint each, carrying a query or a model update. Each site runs the request on its local data and returns a \emph{reply} with a partial result: an aggregate, a grouped table, a model update or a count. The agent may run several rounds before it aggregates the replies and answers. We call all calls and replies caused by one question a \emph{session}. Every orchestrator-site link uses TLS and a persistent connection, so payloads and headers are encrypted.
+
+\begin{figure}[t]
+\centering
+\input{fig_arch.tex}
+\caption{System and threat model. The LLM agent at the orchestrator sends tool calls to sites and receives replies over encrypted links. A passive observer on the links between the orchestrator and the sites records the time, direction and size of every message on every link. Green Shaping runs at the tool-call layer of the orchestrator and at the reply layer of each site, under a per-node joule budget. Drawn as TikZ code prepared with AI assistance (Claude, Anthropic; see the generative AI declaration).}
+\label{fig:arch}
+\end{figure}
+
+\subsection{Observer}
+The adversary is passive and sits on the network between $O$ and the sites, for example on a shared data-centre fabric, an institutional uplink or a wide-area segment. For every link $i$ it records the sequence of messages $(t,d,s)$ with time $t$, direction $d\in\{\uparrow,\downarrow\}$ (call or reply) and size $s$ in bytes. It groups packets into application messages by inter-packet gaps, which needs no decryption. It cannot decrypt traffic, compromise $O$ or a site, inject or delay packets, or see the analyst's question. It knows the system design, the set of sites, the shaping mechanism and its parameters, and it can collect labelled training traffic from a replica of the deployment (Kerckhoffs' principle). It retrains on traffic shaped with the configuration under test, so a complete empirical privacy evaluation would require an attacker adapted to each defence. The retrospective diagnostic retrains a fixed classifier under each mode on the multiplexed observer link; it does not constitute a confirmatory per-site evaluation of this stronger observer.
+
+\subsection{Secrets}
+Per session the observer tries to infer three properties:
+\begin{enumerate}[label=(\roman*),noitemsep,topsep=2pt]
+\item \emph{participation}: whether site $i$ was called, which reveals that it holds data relevant to the question;
+\item \emph{contribution size}: the size bucket of the data that site $i$ processed, a proxy for how many records it holds that match the query;
+\item \emph{query family}: aggregate statistics, group-by, a training job, or a record count.
+\end{enumerate}
+Which channel carries contribution size depends on the query: for group-by queries and training rounds it may appear in reply sizes, while for aggregates and counts the reply size is fixed and only the time a site takes to answer may depend on its data. In cross-institution health or finance analytics these properties can be sensitive on their own: participation in a study on a rare condition, or the volume of matching records at one institution, can disclose information that the payload encryption was meant to protect.
+
+\subsection{Assumptions and scope}
+Sites and orchestrator are honest and follow the protocol. The energy-budget design assumes that a deployment can calibrate energy costs; the EC2 validation does not supply those measurements. The study covers one orchestrator and direct calls to sites. It does not cover chains of agents, compromised sites, active traffic manipulation, or the privacy of the analytics result itself, which needs output-level protection such as differential privacy on the released statistic~\cite{dwork2014algorithmic} and is orthogonal to the coordination metadata studied here. Traffic between the orchestrator and a hosted LLM API is also out of scope; an observer of that link can infer task structure~\cite{pouryousef2026benchmark}, which a locally served model avoids.

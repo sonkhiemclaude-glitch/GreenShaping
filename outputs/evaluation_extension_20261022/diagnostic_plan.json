@@ -1,0 +1,25 @@
+{
+  "seed": 20261023,
+  "scope": "retrospective exploratory grouped cross-validation; 12 questions, not confirmatory",
+  "features": "IPv4 bytes, packets, directional bytes; packet-size mean/std/p10/p50/p90; observed span; IAT mean/std/p90; 22 half-second byte bins",
+  "family_folds": "leave one requested size out, 3 folds",
+  "size_folds": "leave one family out, 4 folds",
+  "RF": {
+    "n_estimators": 100,
+    "max_depth": 4,
+    "min_samples_leaf": 2,
+    "class_weight": "balanced",
+    "n_jobs": 2
+  },
+  "selection": "no hyperparameter selection; fixed before this diagnostic",
+  "excluded": [
+    "payload",
+    "absolute epoch",
+    "question ID features",
+    "driver tool-completion feature",
+    "final-test bank",
+    "per-site participation attacks"
+  ],
+  "window_assumption": "oracle-delimited retained windows; segmentation not learned",
+  "uncertainty": "4000 question-cluster resamples; conditional on acquired questions"
+}

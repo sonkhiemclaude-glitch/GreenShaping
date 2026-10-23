@@ -1,0 +1,89 @@
+{
+  "status": "engineering_preparation_only_final_acquisition_blocked",
+  "preserve_frozen_runs": [
+    "pilot_v3",
+    "pilot_v4",
+    "capacity_01",
+    "capacity_recovery_01",
+    "bulk_verify_01"
+  ],
+  "reserved_hosts": {
+    "T4": "User reports another workload; no experiment launch until availability established"
+  },
+  "small_integration": {
+    "client": "T1",
+    "site_hosts": [
+      "T2",
+      "T3"
+    ],
+    "logical_sites": 3,
+    "mapping": {
+      "0": "T2",
+      "1": "T3",
+      "2": "T3"
+    },
+    "purpose": "Actual public-data tools over persistent verified TLS; correctness only",
+    "max_questions_per_family": 2,
+    "partition": "train",
+    "no_throughput_or_energy_claim": true,
+    "matched_netshaper_status": "pending; current T4 reservation excludes original four-host topology"
+  },
+  "workload": {
+    "dataset_doi": "10.24432/C50K5N",
+    "license": "CC BY 4.0",
+    "bank_size": 480,
+    "split": {
+      "train": 240,
+      "select": 80,
+      "test": 160
+    },
+    "scope": "One-round natural-language reference bank; not a validated LLM/adaptive acquisition",
+    "split_groups": [
+      "template",
+      "disjoint aspect predicate domains"
+    ],
+    "test_policy": "Generate references without executing or tuning on final-test sessions",
+    "site_policy": "Partition each source row once; logical federation; no duplicated records",
+    "size_policy": "Measure actual matching rows on calibration split; do not manufacture manuscript buckets",
+    "confirmatory_suitability": "Not locked: audit class support and cohort shift using train/select first"
+  },
+  "privacy_accounting": {
+    "adjacency": "Bounded-pair protected executions, L1 directional volume difference <= 2V; adaptive full-session accounting",
+    "cap_constraint": "Enforced V and Delta >= 2V after any size padding",
+    "directions": "d = 2N for full participation/family/size analysis",
+    "accounting": "epsilon_session = d * epsilon_direction; report epsilon_tick for queue mechanism separately",
+    "calibration_targets_epsilon_session": [
+      1,
+      4,
+      8
+    ],
+    "certification": "Analytical accounting only; OS/TLS/wire-level DP not certified",
+    "netshaper": "Record Gaussian epsilon/delta/adjacency/window/sensitivity; numerical epsilon alone is not comparability"
+  },
+  "primary_comparison": {
+    "outcome": "Max clipped test advantage over prespecified attackers and secrets versus paired measured extra joules per physical node",
+    "contrast": "Frozen controller versus best feasible frozen single primitive at the same prespecified mean per-node energy budgets",
+    "budget_scope": "Expected/mean energy, not a hard per-session cap",
+    "inference": "Paired bootstrap clustered by independently acquired question/run; training seeds are not acquisition replicates",
+    "negative_result_policy": "Retain no gain, best single selected, infeasible budgets and negative paired energy differences"
+  },
+  "measurement_policy": {
+    "extra_J": "(J_shaped - J_idle_shaped) - (J_plain - J_idle_plain), paired node/question/repetition/scope",
+    "repetitions": ">=10 independent acquisitions per energy condition under current protocol",
+    "latency": "Record planning, actual tool completion, answer completion and capture/cover horizon separately",
+    "invalid_trial": "Keep raw logs and reason; never silently discard timeout, overflow, cap exceedance, OOM or checksum failure",
+    "concurrency": "No concurrent competing CPU, disk or network measurements on participating hosts",
+    "resource_screen": "Bounded samples before, during and after; idle screen is not exclusive-use proof"
+  },
+  "large_run_gates": [
+    "Public-workload class support and utility validated on train/select",
+    "Natural-language planner and second-model provenance validated; no hidden fallback",
+    "Correct distributed shaping and matched NetShaper captures with equal observer topology",
+    "Participating hosts available throughout paired acquisition",
+    "Readable calibrated energy sensors with declared physical scope for any energy claims",
+    "Energy model held-out relative RMSE <=0.2 or prospectively revised gate",
+    "Retained grid, feasible singles, budgets and attackers frozen before fresh final-test acquisition"
+  ],
+  "energy_available": false,
+  "large_run_ready": false
+}

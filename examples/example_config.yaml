@@ -1,0 +1,14 @@
+# Example: run stages on the small synthetic JSONL shipped in examples/synthetic_data/.
+# Outputs are "synthetic smoke-test output, not a paper result".
+run: {seed: 0, output_dir: outputs/example_jsonl, data_kind: synthetic}
+data: {source: jsonl, sessions_jsonl: examples/synthetic_data/sessions_small.jsonl}
+split: {fractions: [0.4, 0.3, 0.3], seed: 0}
+attack: {n_estimators: 20, n_boot: 50}
+energy: {cost_models: {}}
+grid:
+  padding: {ratio: [2.0], base: [512]}
+  rounds: {window: [0.5], cover_prob: [1.0], reply_frame: [16384]}
+  dp: {mode: [queue], interval: [1.0], eps_dir: [4.0], delta_percentile: [100.0], horizon: [30.0]}
+budgets: {site_J: [], orchestrator_J: null}
+baselines: {fixed_padding_percentile: 99.0, netshaper_root: null}
+experiments: {e5: {alpha: 0.6, query_mixes: null}}
