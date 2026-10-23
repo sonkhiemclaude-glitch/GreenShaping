@@ -1,5 +1,5 @@
 {
-  "publication_files_scanned": 398,
+  "publication_files_scanned": 379,
   "data_files_sha256": 105,
   "findings": [],
   "calibration_original_source_hashes_verified": 578,
@@ -22,6 +22,5 @@
   "classifier_scores_reproduced": 56,
   "full_public_regression_passed": 257,
   "optional_torch_skip": 1,
-  "manuscript_visual_review_passed": true,
   "byte_preserving_gitattributes": true
 }
