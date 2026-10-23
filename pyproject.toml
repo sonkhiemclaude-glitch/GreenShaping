@@ -37,7 +37,7 @@ addopts = "-ra"
 [tool.ruff]
 line-length = 140
 target-version = "py311"
-# code/ is the superseded prototype and check_compliance.py a manuscript tool (same folder on the device)
+# Exclude superseded prototypes and internal compliance tooling.
 extend-exclude = ["outputs", "code", "check_compliance.py"]
 
 [tool.ruff.lint]
