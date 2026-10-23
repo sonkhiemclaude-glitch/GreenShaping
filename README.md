@@ -1,13 +1,12 @@
 # GreenShaping
 
-Research code and de-identified evaluation data for **Green Shaping: Energy-Aware Design and Validation of Metadata Protection for LLM-Orchestrated Federated Analytics**. This is a research draft, not a claim of measured energy or certified packet-level privacy.
+Source code and de-identified evaluation data for GreenShaping, a toolkit for metadata protection in federated analytics. Physical energy and packet-level privacy are not certified by these results.
 
 ## What is available
 
 - `src/greenshaping/`: padding, rounds, DP release, public-contract admission, workflow envelopes, local TLS adapters, analysis and workload generation.
 - `scripts/` and `tests/`: reproduction/analysis scripts and the current regression suite. Operational launch recipes require a separately authorised deployment; shipped cloud configs are an offline profile with every host reserved.
 - [Research data](data/README.md): HIGGS provenance/TRAIN banks, Mac calibration, 168 EC2 sessions, 48 model checks, synthetic sensitivity/admission tables, and three local TLS phases with all failures retained.
-- [Manuscript](manuscript/): LaTeX source, figure assets and the latest review PDF. Author declarations are included in the manuscript.
 - [Reuse terms](LICENSING.md): an original-code licence has not yet been selected; the upstream HIGGS licence remains CC BY 4.0.
 
 ## Main evidence and limits
@@ -27,4 +26,4 @@ python scripts/reproduce_public_attackers.py
 
 The regression recorded before publication has 257 passes and one skip for optional Torch. The public-data checkers verify hashes, rederive packet/session costs and all metadata feature rows, and reproduce the 56 frozen retrospective classifier scores. Results are descriptive; software tests are not evidence of privacy.
 
-Build the review paper with `cd manuscript` followed by `tectonic --keep-logs main.tex`. To rerun synthetic studies, use a scratch checkout/output directory: benchmark scripts write to their dated output folders. Do not overwrite the preserved published results. A fresh TLS acquisition requires scoped capture permission, bounded storage and new run identifiers; see `scripts/benchmark_local_contract_tls.py`. No acquisition, model download, cloud provisioning or external message is triggered by importing the package or running its unit tests.
+To rerun synthetic studies, use a scratch checkout/output directory: benchmark scripts write to their dated output folders. Do not overwrite the preserved published results. A fresh TLS acquisition requires scoped capture permission, bounded storage and new run identifiers; see `scripts/benchmark_local_contract_tls.py`. No acquisition, model download, cloud provisioning or external message is triggered by importing the package or running its unit tests.
