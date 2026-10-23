@@ -1,5 +1,5 @@
 {
-  "description": "Current public payloads except this manifest itself; original tagged snapshot remains unchanged",
+  "description": "Current source code and de-identified evaluation data payloads, excluding this manifest itself",
   "files": {
     ".gitattributes": {
       "sha256": "fc252b1c9b87cb9b86efefff458d06b42f6e55feb42195c210e5bdfbbb996987",
@@ -13,25 +13,21 @@
       "sha256": "065087b9a831c82c563777ab9fd05a09faf6a9440c769af60ab70b61f3743dc4",
       "bytes": 220
     },
-    "AUTHOR_DECLARATIONS.json": {
-      "sha256": "8b5d32607517fa1d8c4e2f19db0d4250f33a7762ba74d75a92c3d5c08bffdb21",
-      "bytes": 689
-    },
     "DATA_SHA256.json": {
       "sha256": "bb012b754710f0e7b8fa43223bd97992ef855ed2f87a98f5332cb70cb239ae15",
       "bytes": 17609
     },
     "LICENSING.md": {
-      "sha256": "c7ccc28ece60019aa8e4cd36be506b80a5e874d4afcb86aa354f977b1b759262",
-      "bytes": 832
+      "sha256": "573bc1ad70c222e4d25b6cf982ef34be581fb45f766379cf1c5210a29c00d8b7",
+      "bytes": 772
     },
     "PUBLICATION_AUDIT.json": {
-      "sha256": "2c6211c81ebc29675b1d6b5e80c03524fbf27692a8c582141fedfa6ba8af08bb",
-      "bytes": 803
+      "sha256": "77ce75470008f338b0b2ac43c0ff00c1e07065d27520019db2ae682b9684c95f",
+      "bytes": 760
     },
     "README.md": {
-      "sha256": "8b43c0fcf38c39c04b0de3b671d12b913c10a87d4fa4a482b107ad36a38a28c5",
-      "bytes": 3237
+      "sha256": "4403dd81fbb5f42a415b284e419f88c4d2fcf1e623c2573115276a94fc18f12b",
+      "bytes": 2948
     },
     "REPRODUCTION_CHECK.json": {
       "sha256": "d3fe5164fe3c62aca9172b534046417b58a34556ce28332eaba178de768533a1",
@@ -86,8 +82,8 @@
       "bytes": 6782
     },
     "data/README.md": {
-      "sha256": "bd293b3037399424860a1c03594b2dadeb631850f94ef0e29d72eecc41685b1f",
-      "bytes": 2232
+      "sha256": "3b6c48520829ccbdaeed15682de3f548dac2277c559128251af499198ae6792b",
+      "bytes": 2217
     },
     "data/higgs/banks/n10/train.jsonl": {
       "sha256": "fa2e997dc541c224e0381b3dcc204bc69fcb252eae5f5452e8c3f96eea0afe5f",
@@ -136,78 +132,6 @@
     "examples/synthetic_data/sites_example.yaml": {
       "sha256": "c17a826fb2f006d86e6b606276f1e08f749ca3f422378c99dd578065b060efec",
       "bytes": 264
-    },
-    "manuscript/GreenShaping_review.pdf": {
-      "sha256": "c1a2e3cac1250e36e62208ada66e2146962850a3c35348d7b970128fb1ffafc9",
-      "bytes": 236010
-    },
-    "manuscript/README.md": {
-      "sha256": "a5ec20d6b07437aa4e5ba93c1459d64df22ff498725197502931bc09ab51fadd",
-      "bytes": 503
-    },
-    "manuscript/audit_and_code/outputs/evaluation_extension_20261022/attacker_diagnostic.pdf": {
-      "sha256": "3d201dd1f8d145343a69274243c8ef1f2e708acfc392fa0e156e9d9866b5b30d",
-      "bytes": 18513
-    },
-    "manuscript/audit_and_code/outputs/paper_completion_20261022/network_costs.pdf": {
-      "sha256": "a307e47dc96b520c30c40469b12f93c8ded8345118cddeddf20bcd5ea7ad5171",
-      "bytes": 16670
-    },
-    "manuscript/audit_and_code/outputs/reliability_controller_20261023/reliability_admission.pdf": {
-      "sha256": "849d682ad49ddb535064c13c20c8af14fa8e14cdc28efa8c955e3fc2427679db",
-      "bytes": 18459
-    },
-    "manuscript/audit_and_code/outputs/reliability_controller_20261023/workflow_envelope_tradeoff.pdf": {
-      "sha256": "9ab082dd831e90cc65dd379059d6cb7ef809e0a4dfe90948b2cb7352422a5f0f",
-      "bytes": 18719
-    },
-    "manuscript/fig_arch.tex": {
-      "sha256": "2580efe86fa44ed8bd0452a93d171bae4b7bc8f67ba99ed0293c881ca2819bef",
-      "bytes": 1787
-    },
-    "manuscript/fig_dpcost.tex": {
-      "sha256": "389986af0c4139ba5ce24d68aa7d0e15aebc0ed9fc4c61b58c80c24f69bb9a4e",
-      "bytes": 895
-    },
-    "manuscript/main.tex": {
-      "sha256": "dc840879c7c9a24fc22fd09e70837dbe1131d329dc49022b165797efc125858e",
-      "bytes": 7623
-    },
-    "manuscript/references_verified.bib": {
-      "sha256": "b8c0c448d788402150183c9f0b1f028f65997ff5c05139023c58118e2d68463a",
-      "bytes": 20957
-    },
-    "manuscript/s1_intro.tex": {
-      "sha256": "e7c4716ecfd281f9391b2747d0d9ed2b7c7355b2ae4a18d0e1fdc11fdd800690",
-      "bytes": 6045
-    },
-    "manuscript/s2_related.tex": {
-      "sha256": "7b318f8f1569a69716e3b0d933d2a822a5b60d13faf1962cddedcdfbd4e35689",
-      "bytes": 9176
-    },
-    "manuscript/s3_model.tex": {
-      "sha256": "a7361c2db16d10e2aa59b8f942ad82f0c16fe68a767fbee79bf91ff1207b93a1",
-      "bytes": 4324
-    },
-    "manuscript/s4_design.tex": {
-      "sha256": "7b3ca3b65badd2f7b16487a8ac4df4fb6699e2e3b7be3b03725d704dd3250210",
-      "bytes": 14577
-    },
-    "manuscript/s5_analysis.tex": {
-      "sha256": "38bf91c74ea0c3bb41f79913f81b8aa50ab8c819c62543a311c762420f1a31b0",
-      "bytes": 15729
-    },
-    "manuscript/s6_method.tex": {
-      "sha256": "1dd17641fc28cdfeebc14e45049d942f92b4a0c4b8cf13bb7fd626c855a21e1c",
-      "bytes": 9905
-    },
-    "manuscript/s7_results.tex": {
-      "sha256": "4483867903a378dfb5c3caebc8eb2cd5f073444d978dbd1252c1625fc7572121",
-      "bytes": 19708
-    },
-    "manuscript/s8_discussion.tex": {
-      "sha256": "5acb97bcb086192cc7cf9c542dbaf58e4e96c67dd190d010283df9b41ebedb23",
-      "bytes": 7178
     },
     "outputs/evaluation_extension_20261022/analytical_crosschecks.json": {
       "sha256": "d2f077addac3112a4624a91dd766061476187d1cc243661e37a2a52037e54b6e",
@@ -602,8 +526,8 @@
       "bytes": 2078
     },
     "pyproject.toml": {
-      "sha256": "dd8514894a28314e09e543ba7a24188de5574f0d1ee4bb87f3c5619e8241b059",
-      "bytes": 1325
+      "sha256": "5045706297bdda88e16124544a481e869c88af39ba1dfce012b1d31241225dc1",
+      "bytes": 1284
     },
     "requirements.txt": {
       "sha256": "02b1e53e4a6cd5b64ed356f31a3ea81b0388410c8536ea58db7b32fd0b28a2f4",
