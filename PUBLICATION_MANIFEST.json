@@ -1,5 +1,5 @@
 {
-  "description": "All initial public snapshot payloads except this manifest itself",
+  "description": "Current public payloads except this manifest itself; original tagged snapshot remains unchanged",
   "files": {
     ".gitattributes": {
       "sha256": "fc252b1c9b87cb9b86efefff458d06b42f6e55feb42195c210e5bdfbbb996987",
@@ -14,8 +14,8 @@
       "bytes": 220
     },
     "AUTHOR_DECLARATIONS.json": {
-      "sha256": "af563a807ff7d91dc321fae91119b1a57cbe6c89e6389c1bfb61d2cf063949b0",
-      "bytes": 615
+      "sha256": "8b5d32607517fa1d8c4e2f19db0d4250f33a7762ba74d75a92c3d5c08bffdb21",
+      "bytes": 689
     },
     "DATA_SHA256.json": {
       "sha256": "bb012b754710f0e7b8fa43223bd97992ef855ed2f87a98f5332cb70cb239ae15",
@@ -30,8 +30,8 @@
       "bytes": 803
     },
     "README.md": {
-      "sha256": "192a92c1ebaea38cf66cd7369eab3154b08ad89344fa3a3d648038fdaf3ec749",
-      "bytes": 4487
+      "sha256": "8b43c0fcf38c39c04b0de3b671d12b913c10a87d4fa4a482b107ad36a38a28c5",
+      "bytes": 3237
     },
     "REPRODUCTION_CHECK.json": {
       "sha256": "d3fe5164fe3c62aca9172b534046417b58a34556ce28332eaba178de768533a1",
@@ -170,8 +170,8 @@
       "bytes": 895
     },
     "manuscript/main.tex": {
-      "sha256": "bce476e830dbb551972590875eecf86a62212047c26cc23b452db210e2457636",
-      "bytes": 7761
+      "sha256": "dc840879c7c9a24fc22fd09e70837dbe1131d329dc49022b165797efc125858e",
+      "bytes": 7623
     },
     "manuscript/references_verified.bib": {
       "sha256": "b8c0c448d788402150183c9f0b1f028f65997ff5c05139023c58118e2d68463a",
