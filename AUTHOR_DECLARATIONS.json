@@ -1,9 +1,9 @@
 {
   "CRediT": "Proposed role allocation requested by the user; actual roles require all-author verification before submission",
   "funding": "No specific grant, confirmed by user",
-  "acknowledgements": "User-provided text; redundant opening parenthesis corrected; RACE sentence italicised",
+  "acknowledgements": "User-provided text; RACE sentence in regular type",
   "data_code_repository": "https://github.com/sonkhiemclaude-glitch/GreenShaping",
   "code_license": "Not yet selected; public source availability does not imply a reuse licence",
-  "competing_interests": "Not confirmed; existing draft marker retained",
-  "AI_declaration": "Existing author-confirmation marker retained"
+  "competing_interests": "All authors confirm no competing interests, communicated by user on 2026-10-23",
+  "AI_declaration": "Language/style assistance and observed code, analysis-check and figure assistance disclosed; author responsibility stated"
 }
